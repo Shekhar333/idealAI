@@ -13,6 +13,7 @@ func (s *Server) RegisterRoutes() http.Handler {
 	e.Use(middleware.Recover())
 
 	e.GET("/", s.HelloWorldHandler)
+	e.POST("/openAI", s.openAIrequestHandler)
 
 	return e
 }
